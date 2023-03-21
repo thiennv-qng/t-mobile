@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "tmobile",
     "name": "t-mobile",
     "slug": "t-mobile",
     "version": "1.0.0",
@@ -21,10 +22,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.thienitqng.tmobile"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1acdd881-e10d-435b-a481-19b9e650d5df"
+      }
     }
   }
 }
