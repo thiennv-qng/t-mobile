@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+// import { useDispatch, useSelector } from "react-redux";
 
 import Header from "../components/header";
 import HorizontalView from "../components/horizontalView";
@@ -7,14 +8,23 @@ import IonIcons from "@expo/vector-icons/Ionicons";
 
 import { Navigations } from "../constant";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
+import ViewQureryData from "../components/viewQureryData";
+// import { RootDispatch, RootState } from "../store";
+// import { Button } from "@rneui/base";
+// import { setCounter } from "../store/main.controller";
 
 const Welcome = () => {
   const { navigate } = useNavigation<NavigationProp<any>>();
+  // const dispatch = useDispatch<RootDispatch>();
+  // const count = useSelector(({ main }: RootState) => main.counter);
+
+  // const onCount = () => dispatch(setCounter());
 
   return (
     <ViewContainer style={{ gap: 24 }}>
       <Header />
       <View style={styles.content}>
+        <ViewQureryData />
         <Text style={styles.secondary}>Welcome to Desig!</Text>
 
         <View>
@@ -29,6 +39,9 @@ const Welcome = () => {
           <Text style={styles.btnChild}>Add/New wallet</Text>
         </HorizontalView>
       </TouchableOpacity>
+
+      {/* <Text>{count}</Text> */}
+      {/* <Button onPress={onCount}>Counter + </Button> */}
     </ViewContainer>
   );
 };

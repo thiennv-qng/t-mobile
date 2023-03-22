@@ -1,13 +1,15 @@
+import { createURL } from "expo-linking";
 import { LinkingOptions, NavigationContainer } from "@react-navigation/native";
-import { useCallback, useEffect } from "react";
-import { Linking } from "react-native";
-import { Navigations } from "../constant";
 
 import BottomTabNavigate from "./bottomTabNavigate";
 
+import { Navigations } from "../constant";
+
+const prefix = createURL("tmobile://app");
+
 const Navigation = () => {
   const linking: LinkingOptions<ReactNavigation.RootParamList> = {
-    prefixes: ["https://tmobile.com", "tmobile://"],
+    prefixes: [prefix],
     config: {
       screens: {
         Home: Navigations.Home,
@@ -16,16 +18,6 @@ const Navigation = () => {
       },
     },
   };
-
-  const handleDeepLink = useCallback(async ({ url }: { url: string }) => {
-    await Linking.openURL(url);
-    alert(url);
-  }, []);
-
-  useEffect(() => {
-    Linking.addEventListener("url", handleDeepLink);
-    return () => Linking.removeAllListeners("url");
-  }, []);
 
   return (
     <NavigationContainer linking={linking}>

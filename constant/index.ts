@@ -2,12 +2,12 @@ export enum Navigations {
   Home = "Home",
   Welcome = "Welcome",
   About = "About",
-  ConnectWallet = "Design Wallet",
+  ConnectWallet = "Design-Wallet",
   TabConnectWallet = "Wallet",
-  YourWallet = "Your wallet",
-  NewWallet = "New Wallet",
-  AddWallet = "Add Wallet",
-  FormNewWallet = "Form New Wallet",
+  YourWallet = "Your-wallet",
+  NewWallet = "New-Wallet",
+  AddWallet = "Add-Wallet",
+  FormNewWallet = "Form-New-Wallet",
 }
 
 export enum NewWalletType {

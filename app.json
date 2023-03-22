@@ -16,7 +16,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.thienitqng.tmobile"
     },
     "android": {
       "adaptiveIcon": {
@@ -32,6 +33,13 @@
       "eas": {
         "projectId": "1acdd881-e10d-435b-a481-19b9e650d5df"
       }
+    },
+    "owner": "thienitqng",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/1acdd881-e10d-435b-a481-19b9e650d5df"
     }
   }
 }
