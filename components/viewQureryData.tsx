@@ -24,7 +24,9 @@ const ViewQureryData = () => {
           {queryData.queryParams && (
             <HorizontalView>
               <Text>Query Params:</Text>
-              <Text>{JSON.stringify(queryData.queryParams)}</Text>
+              <Text style={{ flex: 1 }}>
+                {JSON.stringify(queryData.queryParams)}
+              </Text>
             </HorizontalView>
           )}
 

@@ -1,28 +1,31 @@
-import { createURL } from "expo-linking";
+import { createURL, parse } from "expo-linking";
 import { LinkingOptions, NavigationContainer } from "@react-navigation/native";
 
 import BottomTabNavigate from "./bottomTabNavigate";
 
-import { Navigations } from "../constant";
-
-const prefix = createURL("tmobile://app");
+import { prefix } from "../constant";
+import { SafeAreaView } from "react-native";
+import { StatusBar } from "react-native";
 
 const Navigation = () => {
   const linking: LinkingOptions<ReactNavigation.RootParamList> = {
-    prefixes: [prefix],
+    prefixes: [prefix, "tmobile://app", "tmobile://"],
     config: {
       screens: {
-        Home: Navigations.Home,
-        YourWallet: Navigations.YourWallet,
-        ConnectWallet: Navigations.ConnectWallet,
+        Home: "home",
+        YourWallet: "wallet",
+        ConnectWallet: "connect-wallet",
       },
     },
   };
 
   return (
-    <NavigationContainer linking={linking}>
-      <BottomTabNavigate />
-    </NavigationContainer>
+    <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar />
+      <NavigationContainer linking={linking}>
+        <BottomTabNavigate />
+      </NavigationContainer>
+    </SafeAreaView>
   );
 };
 

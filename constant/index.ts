@@ -1,13 +1,16 @@
+import { createURL } from "expo-linking";
+
 export enum Navigations {
   Home = "Home",
   Welcome = "Welcome",
   About = "About",
-  ConnectWallet = "Design-Wallet",
-  TabConnectWallet = "Wallet",
-  YourWallet = "Your-wallet",
-  NewWallet = "New-Wallet",
-  AddWallet = "Add-Wallet",
-  FormNewWallet = "Form-New-Wallet",
+  ConnectWallet = "ConnectWallet",
+  TabConnectWallet = "TabConnectWallet",
+  YourWallet = "YourWallet",
+  NewWallet = "NewWallet",
+  AddWallet = "AddWallet",
+  FormNewWallet = "FormNewWallet",
+  Login = "Login",
 }
 
 export enum NewWalletType {
@@ -17,3 +20,7 @@ export enum NewWalletType {
   ThreeOutOfFour = "3/4",
   ThreeOutOfFive = "3/5",
 }
+
+export const prefix = createURL("tmobile://");
+
+export const PassWord = "12345679";

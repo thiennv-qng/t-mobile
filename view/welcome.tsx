@@ -1,24 +1,31 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-// import { useDispatch, useSelector } from "react-redux";
 
-import Header from "../components/header";
+import Header from "./header";
 import HorizontalView from "../components/horizontalView";
 import ViewContainer from "../components/viewContainer";
 import IonIcons from "@expo/vector-icons/Ionicons";
+import ViewQureryData from "../components/viewQureryData";
 
 import { Navigations } from "../constant";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import ViewQureryData from "../components/viewQureryData";
-// import { RootDispatch, RootState } from "../store";
-// import { Button } from "@rneui/base";
-// import { setCounter } from "../store/main.controller";
+import { useLinkingListener } from "../hooks/useLinkingListener";
+import EXPBoimetric from "./expBiometric";
 
 const Welcome = () => {
   const { navigate } = useNavigation<NavigationProp<any>>();
-  // const dispatch = useDispatch<RootDispatch>();
-  // const count = useSelector(({ main }: RootState) => main.counter);
+  const { queryData } = useLinkingListener();
 
-  // const onCount = () => dispatch(setCounter());
+  // const onConfirm = async () => {
+  //   if (!queryData) return;
+  //   const fallback = JSON.parse(JSON.stringify(queryData.queryParams)).fallback;
+  //   if (await canOpenURL(fallback)) openURL(fallback);
+  // };
+
+  // const goToNextPage = async () => {
+  //   const canopen = await Linking.canOpenURL("tmobile://YourWallet");
+  //   console.log("tmobile://YourWallet", canopen);
+  //   if (canopen) Linking.openURL("tmobile://YourWallet");
+  // };
 
   return (
     <ViewContainer style={{ gap: 24 }}>
@@ -39,9 +46,9 @@ const Welcome = () => {
           <Text style={styles.btnChild}>Add/New wallet</Text>
         </HorizontalView>
       </TouchableOpacity>
-
-      {/* <Text>{count}</Text> */}
-      {/* <Button onPress={onCount}>Counter + </Button> */}
+      {/* <Button onPress={onConfirm}>Confirm</Button>
+      <Button onPress={goToNextPage}>Next Page</Button> */}
+      <EXPBoimetric />
     </ViewContainer>
   );
 };

@@ -7,6 +7,7 @@ import { createElement } from "react";
 // import ConnectWallet from "../view/connectWallet";
 
 import { Navigations } from "../constant";
+import Login from "../view/login";
 import ConnectWallet from "../view/wallet";
 import AddWallet from "../view/wallet/addWallet";
 import FormAddWallet from "../view/wallet/addWallet/formAddWallet";
@@ -38,11 +39,22 @@ const NAVIGATION_STACK = [
     name: Navigations.AddWallet,
     component: AddWallet,
   },
+  {
+    name: Navigations.YourWallet,
+    component: YourWallet,
+  },
+  {
+    name: Navigations.Login,
+    component: Login,
+  },
 ];
 
 const MainStackNavigate = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      initialRouteName={Navigations.Login}
+      screenOptions={{ headerShown: false }}
+    >
       {NAVIGATION_STACK.map(({ component, name }) => (
         <Stack.Screen
           name={name}
@@ -57,7 +69,7 @@ const MainStackNavigate = () => {
 
 const WalletStackNavigate = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen
         name={Navigations.YourWallet}
         component={YourWallet}

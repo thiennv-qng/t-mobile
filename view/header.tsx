@@ -1,8 +1,8 @@
 import { View, TouchableOpacity, StyleSheet } from "react-native";
 import IonIcons from "@expo/vector-icons/Ionicons";
-import SelectChain from "./selectChain";
-import HorizontalView from "./horizontalView";
-import CustomImage from "./customImage";
+import SelectChain from "../components/selectChain";
+import HorizontalView from "../components/horizontalView";
+import CustomImage from "../components/customImage";
 
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 

@@ -1,13 +1,22 @@
+import { ScrollView } from "react-native";
 import { View, ViewProps } from "react-native";
 
 const ViewContainer = (props: ViewProps) => {
   return (
-    <View
-      {...props}
-      style={{ padding: 12, gap: 12, ...(props.style as object) }}
+    <ScrollView
+      style={{
+        padding: 12,
+      }}
     >
-      {props.children}
-    </View>
+      <View
+        style={{
+          gap: 12,
+          ...(props.style as object),
+        }}
+      >
+        {props.children}
+      </View>
+    </ScrollView>
   );
 };
 

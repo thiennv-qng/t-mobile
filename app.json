@@ -12,11 +12,12 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "This app uses the Face ID to verify."
+      },
       "bundleIdentifier": "com.thienitqng.tmobile"
     },
     "android": {
@@ -40,6 +41,20 @@
     },
     "updates": {
       "url": "https://u.expo.dev/1acdd881-e10d-435b-a481-19b9e650d5df"
-    }
+    },
+    "plugins": [
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow $(PRODUCT_NAME) to use Face ID."
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera."
+        }
+      ]
+    ]
   }
 }
