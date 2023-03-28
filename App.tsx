@@ -1,10 +1,10 @@
-import * as React from "react";
-import { Provider } from "react-redux";
+import * as React from 'react'
+import { Provider } from 'react-redux'
 
-import Navigation from "./navigation";
-import UIProvider from "./providers/ui.provider";
+import Navigation from './navigation'
+import UIProvider from './providers/ui.provider'
 
-import store from "./store";
+import store from './store'
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
         <Navigation />
       </UIProvider>
     </Provider>
-  );
-};
+  )
+}
 
-export default App;
+export default App

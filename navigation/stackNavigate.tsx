@@ -7,7 +7,7 @@ import { createElement } from "react";
 // import ConnectWallet from "../view/connectWallet";
 
 import { Navigations } from "../constant";
-import Login from "../view/login";
+import Login from "../view/login/register";
 import ConnectWallet from "../view/wallet";
 import AddWallet from "../view/wallet/addWallet";
 import FormAddWallet from "../view/wallet/addWallet/formAddWallet";
